@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 280px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 开关样式 */
+    .switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 15px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #0ACF83;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* 其他样式保持不变 */
+    .speed-btn {
+      margin: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      background: #0ACF83;
+      color: white;
+      cursor: pointer;
+    }
+
+    .speed-btn:hover {
+      background: #00a163;
+    }
+
+    .shortcuts {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .shortcut-group {
+      margin-bottom: 10px;
+    }
+
+    .shortcut-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="switch-container">
+    <span>启用倍速增强</span>
+    <label class="switch">
+      <input type="checkbox" id="pluginToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div id="content">
+    <h3>B站倍速控制</h3>
+    <div id="speedButtons"></div>
+    <div class="shortcuts">
+      <div class="shortcut-group">
+        <div class="shortcut-title">预设快捷键：</div>
+        A + 1：1.0倍速<br>
+        A + 2：2.0倍速<br>
+        A + 3：3.0倍速<br>
+        A + 0：1.0倍速<br>
+        单按A：1.0倍速
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-title">调节快捷键：</div>
+        Ctrl + ↑：加速 0.25x<br>
+        Ctrl + ↓：减速 0.25x
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
