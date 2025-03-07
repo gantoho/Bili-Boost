@@ -10,15 +10,15 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon.png",
-      "48": "images/icon.png",
-      "128": "images/icon.png"
+      "16": "images/bili-boost-icon.png",
+      "48": "images/bili-boost-icon.png",
+      "128": "images/bili-boost-icon.png"
     }
   },
   "icons": {
-    "16": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "images/bili-boost-icon.png",
+    "48": "images/bili-boost-icon.png",
+    "128": "images/bili-boost-icon.png"
   },
   "content_scripts": [
     {
