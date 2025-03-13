@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+
 let currentSpeed = 1.0;
 let aKeyPressed = false;
 let aKeyTimer = null;
@@ -364,7 +367,7 @@ const menuObserver = new MutationObserver((mutations) => {
                            node.querySelector('.bpx-player-ctrl-playbackrate-menu');
                 
                 if (menu) {
-                    console.log('Found menu:', menu);
+                    // console.log('Found menu:', menu);
                     // 确保样式已注入
                     if (!document.getElementById('bilibili-speed-styles')) {
                         injectStyles();
@@ -581,3 +584,58 @@ function addSpeedSlider(speedMenu) {
     // 初始化滑块状态
     updateSliderState();
 }
+
+
+/** 暗黑模式 */ 
+function initDarkMode() {
+    chrome.storage.sync.get(['darkMode'], function(result) {
+        // console.log('初始化暗黑模式', result);
+        if (result.darkMode) {
+            enableDarkMode();
+        }
+    });
+}
+
+function enableDarkMode() {
+//   console.log('启用暗黑模式');
+    document.body.classList.add('dark-mode');
+}
+
+function disableDarkMode() {
+//   console.log('禁用暗黑模式');
+    document.body.classList.remove('dark-mode');
+}
+
+
+// 监听消息
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    console.log('toggleThemeMode', window.location.href, window.location.href.includes('bilibili.com/video/'));
+
+    // 如果当前页面是哔哩哔哩页面，则不启用按钮功能
+    if (!window.location.href.includes('bilibili.com')) {
+        return true;
+    }
+    // console.log('收到消息:', request);
+    if (request.action === "toggleDarkMode") {
+        if (request.enabled) {
+            enableDarkMode();
+        } else {
+            disableDarkMode();
+        }
+        sendResponse({success: true});
+    }
+    return true;
+});
+
+// 确保在DOM加载完成后初始化
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDarkMode);
+} else {
+    initDarkMode();
+}
+
+// 通知background script content script已加载
+// chrome.runtime.sendMessage({type: 'CONTENT_SCRIPT_LOADED'});
+/** 暗黑模式 */ 
+
+})

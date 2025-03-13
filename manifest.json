@@ -5,7 +5,8 @@
   "description": "增强哔哩哔哩视频播放器的倍速功能",
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -24,7 +25,11 @@
     {
       "matches": ["*://*.bilibili.com/*"],
       "js": ["content.js"],
-      "css": ["styles.css"]
+      "css": ["styles.css", "dark-mode.css"],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }

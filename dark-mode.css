@@ -1,0 +1,152 @@
+/* 定义暗色主题变量 */
+:root {
+  --dark-bg: #18191c;
+  --dark-card: #232427;
+  --dark-card-2: #2a2b2e;
+  --dark-card-3: #313235;
+  --dark-font: #e1e1e1;
+  --dark-font-2: #bcbcbc;
+  --dark-border: #2f3035;
+  --dark-hover: #2a2a2a;
+  --dark-header: #141414;
+  --dark-theme: #0acf83;
+}
+
+/* 主要背景 */
+body.dark-mode,
+body.dark-mode #app {
+  background-color: var(--dark-bg) !important;
+  color: var(--dark-font) !important;
+}
+
+body.dark-mode .bili-header .trending-item .trendings-rank.search-rank-top {
+  color: var(--dark-theme) !important;
+}
+
+body.dark-mode .bili-header,
+body.dark-mode .bili-video-card .bili-video-card__info--tit>a,
+body.dark-mode .bili-header .center-search-container .center-search__bar .nav-search-btn,
+body.dark-mode .bili-header .channel-icons__item,
+body.dark-mode .header-channel-fixed-left,
+body.dark-mode .bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input,
+body.dark-mode .bili-header .slide-down .left-entry .mini-header__title,
+body.dark-mode .bili-header .slide-down .left-entry .default-entry,
+body.dark-mode .bili-header .slide-down .left-entry .download-entry,
+body.dark-mode .bili-header .slide-down .left-entry .loc-entry,
+body.dark-mode .bili-header .slide-down .left-entry .loc-mc-box__text,
+body.dark-mode .bili-header .slide-down .right-entry .right-entry__outside .right-entry-icon,
+body.dark-mode .bili-header .slide-down .right-entry .right-entry__outside .right-entry-text,
+body.dark-mode .mini-header .mini-header__title,
+body.dark-mode .mini-header .left-entry .default-entry,
+body.dark-mode .mini-header .left-entry .download-entry,
+body.dark-mode .mini-header .right-entry .right-entry__outside .right-entry-icon,
+body.dark-mode .mini-header .right-entry .right-entry__outside .right-entry-text,
+body.dark-mode .video-info-container .video-info-title-inner .video-title {
+  color: var(--dark-font) !important;
+}
+
+body.dark-mode .bili-header .histories .history-item {
+  background-color: var(--dark-card-2) !important;
+}
+
+body.dark-mode .bili-header .trending-item:hover {
+  background: var(--dark-card-3) !important;
+}
+
+body.dark-mode #i_cecream,
+body.dark-mode .bili-header__channel,
+body.dark-mode .large-header,
+body.dark-mode .bili-video-card__wrap,
+body.dark-mode .bili-video-card__wrap,
+body.dark-mode .bili-video-card .bili-video-card__image--wrap,
+body.dark-mode .bili-live-card__wrap,
+body.dark-mode .v-img,
+body.dark-mode .mini-header,
+body.dark-mode .bpx-player-sending-bar {
+  background-color: var(--dark-bg) !important;
+}
+
+body.dark-mode .bili-header .bili-header__channel .channel-link,
+body.dark-mode .bili-header .bili-header__channel .channel-entry-more__link,
+body.dark-mode .single-card.floor-card .floor-card-inner,
+body.dark-mode .feed-roll-btn .primary-btn {
+  background-color: var(--dark-card) !important;
+  border-color: transparent !important;
+  color: var(--dark-font) !important;
+}
+
+body.dark-mode .feed-roll-btn .primary-btn:hover,
+body.dark-mode .bili-video-card__skeleton--text,
+body.dark-mode .bili-video-card__skeleton--light,
+body.dark-mode .header-channel-fixed-center,
+body.dark-mode .header-channel-fixed-arrow:hover,
+body.dark-mode .single-card.floor-card .layer.tiny,
+body.dark-mode .bili-header .center-search-container .center-search__bar .nav-search-btn:hover {
+  background-color: var(--dark-card-3) !important;
+}
+
+body.dark-mode .single-card.floor-card .layer {
+  background-color: var(--dark-card-2) !important;
+}
+
+body.dark-mode .single-card.floor-card,
+body.dark-mode .floor-card,
+body.dark-mode .bili-header .search-panel {
+  background-color: var(--dark-card) !important;
+  border: 1px solid var(--dark-card) !important;
+}
+
+body.dark-mode .floor-skeleton.show-animation .skeleton-item::after,
+body.dark-mode .bili-video-card__skeleton--cover,
+body.dark-mode .bili-video-card .loading_animation .bili-video-card__skeleton--cover::after,
+body.dark-mode .bili-header .slide-down .center-search-container .center-search__bar #nav-searchform,
+body.dark-mode .bili-header .center-search-container .center-search__bar #nav-searchform,
+body.dark-mode .bili-header .center-search-container .center-search__bar #nav-searchform.is-focus .nav-search-content,
+body.dark-mode .bili-header .center-search-container .center-search__bar .nav-search-content .nav-search-input:focus,
+body.dark-mode .bpx-docker-major {
+  background-color: var(--dark-card) !important;
+}
+
+body.dark-mode .bili-header .center-search-container .center-search__bar #nav-searchform {
+  border: 1px solid var(--dark-card) !important;
+}
+
+body.dark-mode .bili-header .slide-down,
+body.dark-mode .header-channel {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(30px) !important;
+}
+
+body.dark-mode .header-channel-fixed-right-item {
+  background-color: var(--dark-card-2) !important;
+  border-color: transparent !important;
+  color: var(--dark-font) !important;
+}
+
+body.dark-mode .bili-feed4 .bili-header .slide-down {
+  box-shadow: inset 0 -1px 0 var(--dark-border) !important;
+}
+
+body.dark-mode .nav-search-input:placeholder-shown,
+body.dark-mode :host {
+  color: var(--dark-font-2) !important;
+}
+
+body.dark-mode .bili-header .center-search-container .center-search__bar #nav-searchform.is-actived .nav-search-content  {
+  background-color: transparent !important;
+}
+
+body.dark-mode .bpx-player-container,
+body.dark-mode #bilibili-player-placeholder {
+    -webkit-box-shadow: 0 0 8px transparent;
+    box-shadow: 0 0 8px transparent;
+    -webkit-box-shadow: 0 0 8px transparent;
+    box-shadow: 0 0 8px transparent;
+} 
+
+body.dark-mode .bpx-player-container {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+/* 可以根据需要添加更多选择器 */ 
